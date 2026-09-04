@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potato Health AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="outer-shell">
+    <div class="shell-header">
+        <span class="logo-text">Potato Health AI</span>
+        
+    </div>
+
+    <div class="inner-content">
+    <h2>Analyze Plant Health</h2>
+    
+    <div class="drop-zone" id="dropZone">
+        <input type="file" id="imageUpload" accept="image/*">
+        <div class="upload-icon">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <p>Drag and Drop an leaf image<br>or <span class="browse">browse</span> to choose a file</p>
+    </div>
+
+    <div id="activeView" style="display: none;">
+        <div class="preview-box">
+            <img id="previewImage">
+        </div>
+
+        <div class="result-area" id="result"></div>
+
+        <div class="footer-actions">
+            <button class="clear-btn" onclick="clearAll()">Clear</button>
+            <button class="next-btn" id="predictBtn" onclick="predict()">Analyze Image</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

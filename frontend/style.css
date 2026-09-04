@@ -1,0 +1,175 @@
+:root {
+    --brand-color: #2d5a27; /* Deep Leaf Green */
+    --accent-color: #4ade80; /* Bright Growth Green */
+    --bg-soft: #f4f7f2;    /* Soft Earthy White */
+    --card-bg: #ffffff;
+    --text-main: #1a1c19;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8eee5; /* Pale moss background */
+    font-family: 'Inter', sans-serif;
+}
+
+/* The outer "Window" container */
+.outer-shell {
+    width: 90%;
+    max-width: 600px;
+    background: var(--brand-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.shell-header {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.help-text { opacity: 0.8; font-weight: 400; cursor: pointer; }
+
+/* The inner white card */
+.inner-content {
+    background: var(--bg-soft);
+    margin: 10px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+/* The "Inner-Inner" Dropzone card */
+.drop-zone {
+    background: white;
+    border: 2px solid #e0e6dd;
+    border-radius: 16px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.drop-zone:hover {
+    border-color: var(--accent-color);
+    transform: scale(1.01);
+}
+
+.upload-icon {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+}
+
+.drop-zone p {
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.browse {
+    color: #2d5a27;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#imageUpload { display: none; }
+
+/* Image Preview */
+/* Updated to show full image without cropping */
+.preview-box img {
+    width: 100%;
+    height: auto;          /* Let the height adjust naturally */
+    max-height: 400px;     /* Prevents the image from becoming too huge */
+    object-fit: contain;   /* Ensures the entire image is visible inside the box */
+    border-radius: 12px;
+    margin-top: 20px;
+    display: none;
+    background: #ebece8;   /* Subtle background for images with transparent edges */
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Action Button (The "Next" button style) */
+.footer-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next-btn {
+    background: #ea4c89; /* Keeping the pink for the button if you liked the pop, or use #2d5a27 for green */
+    background: var(--brand-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    filter: brightness(1.2);
+    padding-right: 40px; /* Subtle expansion effect */
+}
+
+/* Result Styling */
+.result-area {
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+/* New layout for the active view */
+#activeView {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between; /* Puts Clear on left, Predict on right */
+    align-items: center;
+}
+
+.clear-btn {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.clear-btn:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
+}
+
+/* Make Predict button look disabled/loading if needed */
+.next-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
